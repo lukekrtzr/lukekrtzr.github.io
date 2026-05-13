@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22 # Direkt auf eine neuere Version gehen
+          node-version: 20
       - run: npm install
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
@@ -28,7 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
